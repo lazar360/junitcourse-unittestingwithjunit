@@ -7,7 +7,11 @@ public class StringHelperTest {
 
     @org.junit.Test
     public void truncateAInFirst2Positions() {
-        assertEquals("ABC", "ABC");
+        StringHelper helper = new StringHelper();
+        String actual = helper.truncateAInFirst2Positions("AACD");
+        String expected = "CD";
+        // AACD = > CD ACD => CD CDEF => CDEF CDAA => CDAA
+        assertEquals(expected, actual);
     }
 
     @org.junit.Test
