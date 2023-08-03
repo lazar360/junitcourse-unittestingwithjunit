@@ -1,7 +1,6 @@
 package com.in28minutes.junit.helper;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
 public class StringHelperTest {
     StringHelper helper = new StringHelper();
@@ -23,8 +22,24 @@ public class StringHelperTest {
         assertEquals("CDAA", helper.truncateAInFirst2Positions("CDAA"));
     }
 
-//    @org.junit.Test
-//    public void areFirstAndLastTwoCharactersTheSame() {
-//        fail("Not yet implemented");
-//    }
+    // ABCD => false ABAB => true AB => true A => false
+    @org.junit.Test
+    public void testAreFirstAndLastTwoCharactersTheSame_FirstAndLastTwoCharactersDifferent() {
+        // assertEquals(false, helper.areFirstAndLastTwoCharactersTheSame("ABCD"));
+        assertFalse(helper.areFirstAndLastTwoCharactersTheSame("ABCD"));
+    }
+    @org.junit.Test
+    public void testAreFirstAndLastTwoCharactersTheSame_FirstAndLastTwoCharactersTheSame() {
+        // assertEquals(true, helper.areFirstAndLastTwoCharactersTheSame("ABAB"));
+        assertTrue(helper.areFirstAndLastTwoCharactersTheSame("ABAB"));
+    }
+    @org.junit.Test
+    public void testAreFirstAndLastTwoCharactersTheSame_OnlyTwoCharacters() {
+        assertTrue(helper.areFirstAndLastTwoCharactersTheSame("AB"));
+    }
+    @org.junit.Test
+    public void testAreFirstAndLastTwoCharactersTheSame_OnlyOneCharacter() {
+        assertFalse(helper.areFirstAndLastTwoCharactersTheSame("A"));
+    }
+
 }
