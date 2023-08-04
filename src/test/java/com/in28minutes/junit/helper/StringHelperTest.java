@@ -1,10 +1,16 @@
 package com.in28minutes.junit.helper;
 
+import org.junit.Before;
 import static org.junit.Assert.*;
 
 public class StringHelperTest {
-    StringHelper helper = new StringHelper();
+    StringHelper helper;
     // AACD = > CD ACD => CD CDEF => CDEF CDAA => CDAA
+
+    @Before
+    public void before(){
+        helper = new StringHelper();
+    }
     @org.junit.Test
     public void testTruncateAInFirst2Positions_AinFirst2Positions() {
         assertEquals("CD", helper.truncateAInFirst2Positions("AACD"));
