@@ -1,28 +1,15 @@
 package com.in28minutes.junit.helper;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 
 import static org.junit.Assert.*;
 
 public class QuickBeforeAfterTest {
 
-//    @Before
-//    public void setUp() throws Exception {
-//    }
-//
-//    @After
-//    public void tearDown() throws Exception {
-//    }
-//
-//    @Test
-//    public void truncateAInFirst2Positions() {
-//    }
-//
-//    @Test
-//    public void areFirstAndLastTwoCharactersTheSame() {
-//    }
+    @BeforeClass
+    public static void beforeClass(){
+        System.out.println("Before Class");
+    }
 
     @Before
     public void setup(){
@@ -43,4 +30,8 @@ public class QuickBeforeAfterTest {
         System.out.println("After test");
     }
 
+    @AfterClass
+    public static void afterClass(){
+        System.out.println("After Class");
+    }
 }
