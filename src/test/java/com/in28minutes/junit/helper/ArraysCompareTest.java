@@ -2,12 +2,9 @@ package com.in28minutes.junit.helper;
 
 import org.junit.Test;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
-import java.util.Collections;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class ArraysCompareTest {
