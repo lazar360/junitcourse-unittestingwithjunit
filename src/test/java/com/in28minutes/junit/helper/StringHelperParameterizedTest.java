@@ -1,6 +1,5 @@
 package com.in28minutes.junit.helper;
 
-import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
@@ -16,8 +15,8 @@ public class StringHelperParameterizedTest {
 
     StringHelper helper = new StringHelper();
 
-    private String input;
-    private String expectedOutput;
+    private final String input;
+    private final String expectedOutput;
 
     public StringHelperParameterizedTest(String input, String expectedOutput) {
         this.input = input;
@@ -36,10 +35,4 @@ public class StringHelperParameterizedTest {
     public void testTruncateAInFirst2Positions() {
         assertEquals(expectedOutput, helper.truncateAInFirst2Positions(input));
     }
-    @org.junit.Test
-    public void testTruncateAInFirst2Positions2() {
-        assertEquals(expectedOutput, helper.truncateAInFirst2Positions(input));
-    }
-
-
 }
